@@ -393,6 +393,10 @@ ${sections}
 }
 
 function downloadPDF(){
+if(typeof html2pdf==="undefined"){
+alert("The PDF library didn't load (check your internet connection) — try again, or use 'Send by email' instead.");
+return;
+}
 const btn=document.getElementById("pdfBtn");
 const actions=document.querySelector(".actions");
 const pad=document.querySelector(".report-pad");
@@ -404,21 +408,32 @@ actions.style.display="none";
 const dateStr=state.meta.date?new Date(state.meta.date+"T12:00:00").toLocaleDateString("en-CA").replace(/\//g,"-"):"report";
 const filename=`SHAW-DUST-W001_${dateStr}.pdf`;
 
+function restore(){
+actions.style.display="";
+btn.disabled=false;btn.textContent=originalText;
+}
+
+// small delay so the layout settles after hiding the buttons, before html2canvas measures it
+setTimeout(function(){
 html2pdf().from(pad).set({
 margin:0.3,
 filename:filename,
-image:{type:"jpeg",quality:0.92},
-html2canvas:{scale:1.5,useCORS:true},
+image:{type:"jpeg",quality:0.85},
+html2canvas:{
+scale:1,
+useCORS:true,
+allowTaint:true,
+windowWidth:pad.scrollWidth,
+scrollX:0,
+scrollY:0
+},
 jsPDF:{unit:"in",format:"letter",orientation:"portrait"},
-pagebreak:{mode:["css","legacy"]}
-}).save().then(()=>{
-actions.style.display="";
-btn.disabled=false;btn.textContent=originalText;
-}).catch(()=>{
-actions.style.display="";
-btn.disabled=false;btn.textContent=originalText;
-alert("Could not generate the PDF. Try again or use Send by email instead.");
+pagebreak:{mode:["css","legacy"],avoid:[".item-card",".area-block"]}
+}).save().then(restore).catch(function(err){
+restore();
+alert("Could not generate the PDF (report may be too long/photo-heavy for this device). Try 'Send by email' instead, or remove a few photos and try again.");
 });
+},200);
 }
 function weekStartISO(dateStr){
 const d=dateStr?new Date(dateStr+"T12:00:00"):new Date();
