@@ -112,6 +112,7 @@ body{background:#fff}
 }
 </style>
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <body>
 <div class="app" id="app"></div>
 <script>
@@ -384,13 +385,41 @@ ${sections}
 <div class="actions">
 <button class="act-btn green" id="submitBtn" onclick="submitToSheets()">☁️ Send to Google Sheet</button>
 <div id="submitStatus" style="font-size:12px;color:#888;text-align:center;margin-top:-4px"></div>
-<button class="act-btn green" onclick="window.print()">🖨️ Print / Save as PDF</button>
+<button class="act-btn green" onclick="downloadPDF()" id="pdfBtn">⬇️ Download PDF</button>
 <a class="act-btn" href="${emailHref}">✉️ Send by email</a>
 <button class="act-btn" onclick="go(state.screen-1)">← Back to edit</button>
 <button class="act-btn" onclick="newInspection()">🔄 New Inspection</button>
 </div></div>`;
 }
 
+function downloadPDF(){
+const btn=document.getElementById("pdfBtn");
+const actions=document.querySelector(".actions");
+const pad=document.querySelector(".report-pad");
+if(!pad)return;
+const originalText=btn.textContent;
+btn.disabled=true;btn.textContent="⬇️ Generating PDF...";
+actions.style.display="none";
+
+const dateStr=state.meta.date?new Date(state.meta.date+"T12:00:00").toLocaleDateString("en-CA").replace(/\//g,"-"):"report";
+const filename=`SHAW-DUST-W001_${dateStr}.pdf`;
+
+html2pdf().from(pad).set({
+margin:0.3,
+filename:filename,
+image:{type:"jpeg",quality:0.92},
+html2canvas:{scale:1.5,useCORS:true},
+jsPDF:{unit:"in",format:"letter",orientation:"portrait"},
+pagebreak:{mode:["css","legacy"]}
+}).save().then(()=>{
+actions.style.display="";
+btn.disabled=false;btn.textContent=originalText;
+}).catch(()=>{
+actions.style.display="";
+btn.disabled=false;btn.textContent=originalText;
+alert("Could not generate the PDF. Try again or use Send by email instead.");
+});
+}
 function weekStartISO(dateStr){
 const d=dateStr?new Date(dateStr+"T12:00:00"):new Date();
 const day=d.getDay();
