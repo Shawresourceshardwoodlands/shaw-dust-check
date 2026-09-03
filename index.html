@@ -22,25 +22,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .field input{width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;color:#111}
 .field input:focus{outline:none;border-color:#2E7D52}
 .sec-badge{display:inline-block;background:#1A4731;color:#fff;font-size:11px;font-weight:600;padding:2px 10px;border-radius:10px;margin-bottom:10px}
-.item-card{background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:11px 12px;margin-bottom:10px}
-.item-num{display:inline-block;background:#D6EAD9;color:#1A4731;font-size:11px;font-weight:600;padding:1px 8px;border-radius:10px;margin-bottom:7px}
-.item-text{font-size:13px;color:#222;line-height:1.5;margin-bottom:10px}
-.item-row{display:flex;gap:10px;margin-bottom:8px}
-.item-col{flex:1}
-.item-col-label{font-size:11px;color:#888;margin-bottom:5px}
-.btn-group{display:flex;gap:4px}
-.btn{flex:1;padding:8px 2px;border:1px solid #ddd;border-radius:8px;font-size:13px;cursor:pointer;background:#f5f5f5;color:#666;font-weight:400;text-align:center}
-.btn-accum{background:#D6EAD9;border-color:#2E7D52;color:#1A4731;font-weight:600}
-.btn-ok{background:#EAF3DE;border-color:#2E7D52;color:#1A4731;font-weight:600}
-.btn-notok{background:#FCEBEB;border-color:#A32D2D;color:#A32D2D;font-weight:600}
-.photo-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:4px}
+.item-card{background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:12px 13px;margin-bottom:12px}
+.item-num{display:inline-block;background:#D6EAD9;color:#1A4731;font-size:11px;font-weight:600;padding:1px 8px;border-radius:10px;margin-bottom:8px}
+.item-text{font-size:13.5px;color:#222;font-weight:600;line-height:1.4;margin-bottom:10px}
+.check-list{display:flex;flex-direction:column;gap:7px;margin-bottom:4px}
+.check-opt{display:flex;align-items:center;gap:9px;padding:9px 10px;border:1px solid #ddd;border-radius:8px;cursor:pointer;background:#fafafa}
+.check-opt .box{width:18px;height:18px;border:2px solid #999;border-radius:4px;flex-shrink:0;position:relative;background:#fff}
+.check-opt.checked{border-color:#2E7D52}
+.check-opt.checked .box{border-color:#2E7D52;background:#2E7D52}
+.check-opt.checked .box::after{content:"";position:absolute;left:4px;top:0px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.check-opt .lbl{font-size:13.5px;color:#333;font-weight:500}
+.check-opt.checked .lbl{color:#1A4731;font-weight:600}
+.check-opt .tag{margin-left:auto;font-size:10px;color:#999;font-weight:600}
+.status-pill{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;margin:8px 0 10px}
+.status-ok{background:#EAF3DE;color:#1A4731}
+.status-notok{background:#FCEBEB;color:#A32D2D}
+.status-none{background:#eee;color:#999}
+.photo-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px}
 .photo-btn{display:inline-flex;align-items:center;gap:5px;padding:6px 10px;border:1px dashed #2E7D52;border-radius:8px;font-size:12px;cursor:pointer;background:#f0f7f0;color:#1A4731}
 .photo-thumb{width:52px;height:52px;object-fit:cover;border-radius:6px;border:1px solid #ddd}
 .photo-thumb-wrap{position:relative;display:inline-block}
 .photo-del{position:absolute;top:-5px;right:-5px;background:#A32D2D;color:#fff;border:none;border-radius:50%;width:18px;height:18px;font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
 .comments-box{margin-top:10px}
 .comments-box label{font-size:12px;color:#666;display:block;margin-bottom:5px}
-.comments-box textarea{width:100%;padding:9px 12px;border:1px solid #ddd;border-radius:8px;font-size:13px;resize:none;min-height:64px;color:#111}
+.comments-box textarea{width:100%;padding:9px 12px;border:1px solid #ddd;border-radius:8px;font-size:13px;resize:none;min-height:52px;color:#111}
 .comments-box textarea:focus{outline:none;border-color:#2E7D52}
 .nav-row{display:flex;gap:8px;padding:16px 14px 20px}
 .nav-btn{flex:1;padding:13px;border:1px solid #ddd;border-radius:10px;font-size:14px;cursor:pointer;background:#f5f5f5;color:#333;font-weight:400}
@@ -51,31 +56,46 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .report-header h2{color:#fff;font-size:15px;font-weight:600;margin-bottom:4px}
 .report-header p{color:#9FE1CB;font-size:12px}
 .report-meta{color:#D6EAD9;font-size:12px;margin-top:10px;line-height:1.9}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
 .stat{background:#f5f5f5;border-radius:8px;padding:12px;text-align:center}
-.stat-num{font-size:26px;font-weight:600}
+.stat-num{font-size:24px;font-weight:600}
 .stat-lbl{font-size:11px;color:#888;margin-top:2px}
 .c-ok{color:#1A4731}
 .c-notok{color:#A32D2D}
 .c-warn{color:#854F0B}
+.big-pct{background:#1A4731;border-radius:10px;padding:16px;text-align:center;margin-bottom:16px}
+.big-pct .num{color:#fff;font-size:34px;font-weight:700}
+.big-pct .lbl{color:#9FE1CB;font-size:12px;margin-top:2px}
+.crit-summary{display:flex;gap:8px;margin-bottom:18px}
+.crit-box{flex:1;background:#f5f5f5;border-radius:8px;padding:10px 6px;text-align:center}
+.crit-box .pct{font-size:18px;font-weight:700}
+.crit-box .lbl{font-size:10px;color:#888;margin-top:3px;line-height:1.3}
 .report-sec{margin-bottom:18px}
 .report-sec-title{font-size:13px;font-weight:600;color:#1A4731;border-bottom:2px solid #D6EAD9;padding-bottom:5px;margin-bottom:8px}
-.report-item{padding:6px 0;border-bottom:1px solid #f0f0f0}
-.report-item-row{display:flex;align-items:flex-start;gap:6px;font-size:12px}
-.ri-num{min-width:28px;color:#999;font-size:11px;padding-top:1px}
-.ri-text{flex:1;color:#222;line-height:1.4}
-.ri-accum{min-width:26px;text-align:center;font-size:11px;font-weight:700;padding:2px 5px;border-radius:8px}
-.ri-status{min-width:54px;text-align:center;font-size:11px;font-weight:600;padding:2px 5px;border-radius:8px}
-.a-n{background:#e8e8e8;color:#555}
-.a-t{background:#FFF3CD;color:#854F0B}
-.a-m{background:#FFE0B2;color:#6D3B00}
-.a-h{background:#FCEBEB;color:#A32D2D}
+.area-block{margin-bottom:14px;border:1px solid #eee;border-radius:8px;padding:10px 11px}
+.area-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.area-name{font-size:12.5px;font-weight:700;color:#222}
+.area-pct{font-size:12px;font-weight:700;padding:2px 8px;border-radius:8px}
+.pct-high{background:#EAF3DE;color:#1A4731}
+.pct-mid{background:#FFF3CD;color:#854F0B}
+.pct-low{background:#FCEBEB;color:#A32D2D}
+.pct-none{background:#eee;color:#999}
+.report-item{padding:5px 0;border-bottom:1px solid #f5f5f5}
+.report-item:last-child{border-bottom:none}
+.report-item-row{display:flex;align-items:flex-start;gap:6px;font-size:11.5px}
+.ri-text{flex:1;color:#444}
+.ri-level{min-width:64px;text-align:center;font-size:10.5px;font-weight:700;padding:2px 5px;border-radius:8px}
+.ri-status{min-width:52px;text-align:center;font-size:10.5px;font-weight:600;padding:2px 5px;border-radius:8px}
+.a-none{background:#e8e8e8;color:#555}
+.a-trace{background:#FFF3CD;color:#854F0B}
+.a-moderate{background:#FFE0B2;color:#6D3B00}
+.a-heavy{background:#FCEBEB;color:#A32D2D}
 .s-ok{background:#EAF3DE;color:#1A4731}
 .s-notok{background:#FCEBEB;color:#A32D2D}
 .s-none{background:#eee;color:#999}
-.report-photos{display:flex;gap:6px;flex-wrap:wrap;padding-left:34px;margin-top:6px}
-.report-photo{width:72px;height:72px;object-fit:cover;border-radius:6px;border:1px solid #ddd}
-.report-comment{font-size:11px;color:#888;font-style:italic;margin-top:4px;padding-left:34px}
+.report-photos{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px}
+.report-photo{width:64px;height:64px;object-fit:cover;border-radius:6px;border:1px solid #ddd}
+.report-comment{font-size:11px;color:#888;font-style:italic;margin-top:3px}
 .actions{display:flex;flex-direction:column;gap:8px;margin-top:20px;padding-bottom:30px}
 .act-btn{padding:14px 16px;border-radius:10px;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:10px;font-weight:500;text-decoration:none;color:#333;background:#f5f5f5;border:1px solid #ddd}
 .act-btn.green{background:#1A4731;color:#fff;border-color:#1A4731;font-weight:600}
@@ -83,142 +103,183 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .legend{background:#f9f9f9;border-radius:8px;padding:10px 12px;margin-bottom:14px;font-size:11px;color:#666;line-height:1.8}
 .legend strong{color:#1A4731}
 @media print{
-  .nav-row,.actions,.prog-wrap,.topbar{display:none!important}
-  .app{background:#fff}
-  body{background:#fff}
-  .report-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .report-photo{width:80px;height:80px}
+.nav-row,.actions,.prog-wrap,.topbar{display:none!important}
+.app{background:#fff}
+body{background:#fff}
+.report-header,.big-pct{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.report-photo{width:72px;height:72px}
+.area-block{break-inside:avoid}
 }
 </style>
 </head>
 <body>
 <div class="app" id="app"></div>
 <script>
-const SECTIONS=[
-  {id:"A",title:"Restricted Areas",sub:"Material Buildup & Combustible Dust Control",items:[
-    {n:1,t:"General housekeeping — combustible dust and material buildup on ground, access roads and walkways"},
-    {n:2,t:"Material accumulation around conveyor bases, transfer points and choke areas"},
-    {n:3,t:"Combustible dust on exterior ledges, structural beams and horizontal surfaces — threshold: ≤ 1/32 in."},
-    {n:4,t:"Fugitive pellet fines accumulation in exterior restricted zones"},
-    {n:5,t:"Exterior ductwork and conveyor enclosures — visible leaks or breaches at seals and joints"},
-    {n:6,t:"Bearings — all exterior equipment — no combustible dust buildup, no overheating indicators"},
-    {n:7,t:"Dryer — dust accumulation on housing, discharge points and exhaust ducting"},
-    {n:8,t:"Mill / Hammer mill — fugitive dust, material leaks and bearing condition"},
-    {n:9,t:"Conveyor — rollers, belts and tail/head pulleys — material buildup controlled"},
-    {n:10,t:"Ignition source control — area free of hot work evidence, smoking or open flames"},
-  ]},
-  {id:"B",title:"Main Plant Area",sub:"Floor 1 Interior",items:[
-    {n:11,t:"Pelletizers — combustible dust buildup on housing, dies, choke rings and discharge points"},
-    {n:12,t:"Mill pedestal and extruder bases — dust accumulation controlled"},
-    {n:13,t:"Dust shields on each extruder unit — intact, in place and undamaged"},
-    {n:14,t:"Bearings on pelletizers — no combustible dust buildup, no overheating signs or abnormal noise"},
-    {n:15,t:"Drive components (gears, chains, sprockets) — no combustible material accumulation"},
-    {n:16,t:"Walkways around pelletizer / extruder units — clear, no fugitive material on floor"},
-    {n:17,t:"Control room — dust accumulation on panels, consoles, monitors and horizontal surfaces"},
-    {n:18,t:"Electrical panels — no dust infiltration; doors sealed, no breach at cable entries"},
-    {n:19,t:"Cleaning checklists complete — clean-up tools in place and accounted for"},
-    {n:20,t:"Combustible dust on overhead piping, cable trays and structural rafters — threshold: ≤ 1/32 in."},
-    {n:21,t:"Ductwork and ventilation system — no visible leaks, blockages or breached joints"},
-  ]},
-  {id:"C",title:"Packaging Area",sub:"Palletizer & Bagger",items:[
-    {n:22,t:"Palletizer platform — combustible dust and fines accumulation controlled (incl. hooder surface)"},
-    {n:23,t:"Under palletizer — material accumulation cleared; no fines buildup on floor structure"},
-    {n:24,t:"Walkways in palletizer zone — clear, no material on floor or step surfaces"},
-    {n:25,t:"Palletizer drive components and bearings — no combustible dust buildup"},
-    {n:26,t:"Bagger — combustible dust accumulation on machine surfaces, frame and under belts"},
-    {n:27,t:"Scale — dust accumulation on platform, load cells and frame controlled"},
-    {n:28,t:"Cleaning checklists complete for packaging area — clean-up tools in place"},
-  ]},
-  {id:"D",title:"Briquette Room",sub:"",items:[
-    {n:29,t:"General dust buildup — combustible material accumulation on all surfaces and equipment"},
-    {n:30,t:"Heat tunnel — material buildup inside tunnel and on conveyor surfaces"},
-    {n:31,t:"Briquette press / forming equipment — dust and fines accumulation controlled"},
-    {n:32,t:"Ductwork and exhaust system — visible leaks or breaches at seals and joints"},
-    {n:33,t:"Walkways and floor surfaces — clear, no combustible material accumulation"},
-  ]},
-  {id:"E",title:"Cooler Room",sub:"",items:[
-    {n:34,t:"Cooler belt — material buildup on belt, frame and discharge point"},
-    {n:35,t:"Walkways — clear, no material accumulation on platform and ledges"},
-    {n:36,t:"Overhead piping and ledges — combustible dust buildup controlled; threshold: ≤ 1/32 in."},
-    {n:37,t:"Cooler fan and ventilation — no visible leaks, blocked intakes or damaged seals"},
-  ]},
-  {id:"F",title:"Toolroom / Generator Room",sub:"",items:[
-    {n:38,t:"Toolroom — combustible dust buildup on all surfaces and stored equipment"},
-    {n:39,t:"Generator room — dust accumulation on generator housing and switchgear"},
-    {n:40,t:"Walkways in both rooms — clear, no obstructions or material accumulation"},
-    {n:41,t:"Electrical equipment — no dust infiltration; no breach at cable entries or junction boxes"},
-  ]},
-  {id:"G",title:"Fire Prevention & Detection",sub:"NFPA 664",items:[
-    {n:42,t:"Fire detection system — control panel shows no active faults or alarms"},
-    {n:43,t:"Emergency systems — wall-mounted emergency buttons, shut-off valves and manual activation systems — accessible, unobstructed and in operative condition"},
-    {n:44,t:"Suppression system — no visible physical damage, obstruction or displaced heads"},
-    {n:45,t:"Fire extinguishers — accessible, fully charged, inspection tag current"},
-    {n:46,t:"Emergency exits and evacuation routes — clear of all material and obstructions"},
-    {n:47,t:"No-smoking compliance — no evidence of smoking in restricted or production areas"},
-    {n:48,t:"Hot work perimeter — no combustible material within prescribed safety radius"},
-  ]},
-  {id:"H",title:"Bearing Inspection",sub:"All equipment",items:[
-    {n:49,t:"Pelletizer / Extruder 1"},{n:50,t:"Pelletizer / Extruder 2"},{n:51,t:"Pelletizer / Extruder 3"},
-    {n:52,t:"Mill / Hammer Mill"},{n:53,t:"Dryer Fan"},{n:54,t:"Conveyor Main Drive"},
-    {n:55,t:"Elevator / Jack Shaft"},{n:56,t:"Bagger Drive"},{n:57,t:"Cooler Belt"},
-    {n:58,t:"Center Feeder"},{n:59,t:"Twin Screw"},
-  ]},
+const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbweRioiT-MM-fOzYHU-p2yfFdAJg5SqrZ0eHrEWucueJNoS_vgn12cUQvXHmHOaHQ1q/exec";
+
+const AREAS=[
+{lvl:"Ground Floor - Outside",name:"Fines Fuel Fan"},
+{lvl:"Ground Floor - Outside",name:"Hopper 1"},
+{lvl:"Ground Floor - Outside",name:"Hopper 2"},
+{lvl:"Ground Floor - Outside",name:"Transition Building"},
+{lvl:"Ground Floor - Outside",name:"Burner and Drying Area"},
+{lvl:"Ground Floor - Inside",name:"Electrical Room"},
+{lvl:"Ground Floor - Inside",name:"Cooler Room"},
+{lvl:"Ground Floor - Inside",name:"Q&A Second Room"},
+{lvl:"Ground Floor - Inside",name:"Boiler Room"},
+{lvl:"Ground Floor - Inside",name:"Storage Building"},
+{lvl:"Ground Floor - Inside",name:"Control Room"},
+{lvl:"Ground Floor - Inside",name:"Bagger Area"},
+{lvl:"Ground Floor - Inside",name:"Q&A First Room"},
+{lvl:"Ground Floor - Inside",name:"Mills"},
+{lvl:"Ground Floor - Inside",name:"Palletizer"},
+{lvl:"Ground Floor - Inside",name:"Hooder"},
+{lvl:"Ground Floor - Inside",name:"Back Room"},
+{lvl:"Ground Floor - Inside",name:"Compressor Room"},
+{lvl:"Ground Floor - Inside",name:"Office"},
+{lvl:"Ground Floor - Inside",name:"Toolroom"},
+{lvl:"Ground Floor - Inside",name:"Generator Room"},
+{lvl:"Second Floor",name:"Stairs"},
+{lvl:"Second Floor",name:"Walkways"},
+{lvl:"Second Floor",name:"Cables Over Extruders"},
+{lvl:"Second Floor",name:"Screener Area and Ventilation Piping"},
+{lvl:"Second Floor",name:"Lunchroom"},
+{lvl:"Second Floor",name:"Bathroom Area"},
+{lvl:"Second Floor",name:"Parts Room"},
+{lvl:"Third Floor",name:"Mezzanine"},
+{lvl:"Exterior",name:"Pallets Yard"},
+].map((a,i)=>({id:i+1,...a}));
+
+const CRITERIA=[
+{key:"leaks",label:"Leaks / Material Buildup",levels:["None","Trace","Moderate","Heavy"]},
+{key:"dust",label:"Dust Accumulation",levels:["None","Trace","Moderate","Heavy"]},
+{key:"housekeeping",label:"Housekeeping",levels:["Clean","Minor Issues","Needs Attention","Poor"]},
 ];
 
-const state={
-  screen:0,
-  meta:{inspector:"",date:"",week:""},
-  responses:{},
-  comments:{},
-  photos:{}
-};
-SECTIONS.forEach(s=>{state.responses[s.id]={};state.comments[s.id]="";state.photos[s.id]={};});
+function critByKey(key){return CRITERIA.find(c=>c.key===key)}
 
-const TOTAL=SECTIONS.length+2;
+function levelClass(idx){
+if(idx===0)return"a-none";
+if(idx===1)return"a-trace";
+if(idx===2)return"a-moderate";
+if(idx===3)return"a-heavy";
+return"a-none";
+}
+function statusOf(idx){
+if(idx===null||idx===undefined)return null;
+return idx<=1?"OK":"Not OK";
+}
+
+function fmtDate(d){return d.toISOString().slice(0,10)}
+function weekRange(d){
+const day=d.getDay();
+const sun=new Date(d);sun.setDate(d.getDate()-day);
+const sat=new Date(sun);sat.setDate(sun.getDate()+6);
+const opts={month:"long"};
+const sunMonth=sun.toLocaleDateString("en-US",opts);
+const satMonth=sat.toLocaleDateString("en-US",opts);
+const year=sat.getFullYear();
+if(sunMonth===satMonth){
+return`${sunMonth} ${sun.getDate()}–${sat.getDate()}, ${year}`;
+}
+return`${sunMonth} ${sun.getDate()} – ${satMonth} ${sat.getDate()}, ${year}`;
+}
+
+const today=new Date();
+const state={
+screen:0,
+meta:{inspector:"",date:fmtDate(today),week:weekRange(today)},
+responses:{},
+comments:{},
+photos:{}
+};
+AREAS.forEach(a=>{
+state.responses[a.id]={};
+state.comments[a.id]={};
+state.photos[a.id]={};
+CRITERIA.forEach(c=>{
+state.responses[a.id][c.key]={level:null};
+state.comments[a.id][c.key]="";
+state.photos[a.id][c.key]=[];
+});
+});
+
+const TOTAL=AREAS.length+2;
 function pct(){return Math.round((state.screen/(TOTAL-1))*100)}
 
-function setAccum(sid,n,v){
-  if(!state.responses[sid][n])state.responses[sid][n]={};
-  state.responses[sid][n].accum=v;render();
+function setLevel(areaId,critKey,v){
+state.responses[areaId][critKey].level=v;
+render();
 }
-function setStatus(sid,n,v){
-  if(!state.responses[sid][n])state.responses[sid][n]={};
-  state.responses[sid][n].status=v;render();
+function addPhoto(areaId,critKey,input){
+const file=input.files[0];
+if(!file)return;
+const reader=new FileReader();
+reader.onload=function(e){
+state.photos[areaId][critKey].push(e.target.result);
+render();
+};
+reader.readAsDataURL(file);
 }
-function addPhoto(sid,n,input){
-  const file=input.files[0];
-  if(!file)return;
-  const reader=new FileReader();
-  reader.onload=function(e){
-    if(!state.photos[sid][n])state.photos[sid][n]=[];
-    state.photos[sid][n].push(e.target.result);
-    render();
-  };
-  reader.readAsDataURL(file);
+function delPhoto(areaId,critKey,i){
+state.photos[areaId][critKey].splice(i,1);
+render();
 }
-function delPhoto(sid,n,i){
-  state.photos[sid][n].splice(i,1);
-  render();
+
+// pct = ok / (ok+notok) * 100, among answered items only. Returns null if none answered.
+function computePct(items){
+let ok=0,notok=0;
+items.forEach(v=>{
+const s=statusOf(v);
+if(s==="OK")ok++;
+else if(s==="Not OK")notok++;
+});
+const answered=ok+notok;
+return answered===0?null:Math.round((ok/answered)*100);
 }
 
 function countAll(){
-  let total=0,filled=0,notOk=0;
-  SECTIONS.forEach(s=>{s.items.forEach(item=>{
-    total++;
-    const r=(state.responses[s.id]||{})[item.n]||{};
-    if(r.accum&&r.status)filled++;
-    if(r.status==="Not OK")notOk++;
-  });});
-  return{total,filled,notOk,ok:filled-notOk,missing:total-filled};
+let total=0,filled=0,notOk=0,ok=0;
+const allLevels=[];
+AREAS.forEach(a=>{
+CRITERIA.forEach(c=>{
+total++;
+const lvl=state.responses[a.id][c.key].level;
+allLevels.push(lvl);
+if(lvl!==null&&lvl!==undefined){
+filled++;
+if(statusOf(lvl)==="OK")ok++;else notOk++;
+}
+});
+});
+const overallPct=computePct(allLevels);
+return{total,filled,notOk,ok,missing:total-filled,overallPct};
+}
+
+function areaPct(areaId){
+const items=CRITERIA.map(c=>state.responses[areaId][c.key].level);
+return computePct(items);
+}
+
+function criterionPct(critKey){
+const items=AREAS.map(a=>state.responses[a.id][critKey].level);
+return computePct(items);
+}
+
+function pctClass(p){
+if(p===null)return"pct-none";
+if(p>=80)return"pct-high";
+if(p>=50)return"pct-mid";
+return"pct-low";
 }
 
 function renderMeta(){
-  return`<div class="topbar"><div><div class="topbar-title">Shaw Resources</div><div class="topbar-sub">Weekly Dust Inspection · SHAW-DUST-W001 v3.0</div></div></div>
+return`<div class="topbar"><div><div class="topbar-title">Shaw Resources</div><div class="topbar-sub">Weekly Dust Inspection · SHAW-DUST-W001 v4.0</div></div></div>
 <div class="prog-wrap"><div class="prog-bar" style="width:${pct()}%"></div></div>
 <div class="screen">
 <div class="screen-title">Inspection Information</div>
 <div class="screen-sub">Complete the fields before starting the walkthrough.</div>
-<div class="legend"><strong>Accumulation Level:</strong> N = None · T = Trace · M = Moderate · H = Heavy<br><strong>Status:</strong> ✓ OK = acceptable · ✗ Not OK = corrective action required</div>
+<div class="legend"><strong>Leaks / Material Buildup & Dust Accumulation:</strong> None · Trace · Moderate · Heavy<br><strong>Housekeeping:</strong> Clean · Minor Issues · Needs Attention · Poor<br><strong>Status:</strong> first two options = ✓ OK &nbsp;·&nbsp; last two options = ✗ Not OK</div>
 <div class="field"><label>Inspector / Safety Officer</label><input type="text" value="${state.meta.inspector}" placeholder="Full name" oninput="state.meta.inspector=this.value"></div>
 <div class="field"><label>Date of Inspection</label><input type="date" value="${state.meta.date}" oninput="state.meta.date=this.value"></div>
 <div class="field"><label>Week (e.g. May 12–16, 2026)</label><input type="text" value="${state.meta.week}" placeholder="May 12–16, 2026" oninput="state.meta.week=this.value"></div>
@@ -226,76 +287,103 @@ function renderMeta(){
 <div class="nav-row"><button class="nav-btn primary" onclick="go(1)">Start Inspection →</button></div>`;
 }
 
-function renderSection(sec){
-  const s=SECTIONS[sec-1];
-  const resp=state.responses[s.id];
-  const items=s.items.map(item=>{
-    const r=resp[item.n]||{};
-    const photos=(state.photos[s.id][item.n]||[]);
-    const ac=["N","T","M","H"].map(v=>`<button class="btn${r.accum===v?' btn-accum':''}" onclick="setAccum('${s.id}',${item.n},'${v}')">${v}</button>`).join("");
-    const st=["OK","Not OK"].map(v=>`<button class="btn${r.status===v?(v==="OK"?" btn-ok":" btn-notok"):''}" onclick="setStatus('${s.id}',${item.n},'${v}')">${v==="OK"?"✓ OK":"✗ Not OK"}</button>`).join("");
-    const thumbs=photos.map((p,i)=>`<span class="photo-thumb-wrap"><img class="photo-thumb" src="${p}"><button class="photo-del" onclick="delPhoto('${s.id}',${item.n},${i})">×</button></span>`).join("");
-    return`<div class="item-card">
-<span class="item-num">${s.id}${item.n}</span>
-<div class="item-text">${item.t}</div>
-<div class="item-row">
-<div class="item-col"><div class="item-col-label">Accumulation Level</div><div class="btn-group">${ac}</div></div>
-<div class="item-col"><div class="item-col-label">Status</div><div class="btn-group">${st}</div></div>
-</div>
+function renderCriterionCard(area,crit){
+const r=state.responses[area.id][crit.key];
+const photos=state.photos[area.id][crit.key];
+const opts=crit.levels.map((word,idx)=>{
+const checked=r.level===idx;
+return`<div class="check-opt${checked?' checked':''}" onclick="setLevel(${area.id},'${crit.key}',${idx})">
+<span class="box"></span><span class="lbl">${word}</span>
+</div>`;
+}).join("");
+const status=statusOf(r.level);
+const statusHtml=status?`<span class="status-pill ${status==="OK"?"status-ok":"status-notok"}">${status==="OK"?"✓ OK":"✗ Not OK"}</span>`:`<span class="status-pill status-none">— Not answered</span>`;
+const thumbs=photos.map((p,i)=>`<span class="photo-thumb-wrap"><img class="photo-thumb" src="${p}"><button class="photo-del" onclick="delPhoto(${area.id},'${crit.key}',${i})">×</button></span>`).join("");
+return`<div class="item-card">
+<div class="item-text">${crit.label}</div>
+<div class="check-list">${opts}</div>
+${statusHtml}
 <div class="photo-row">
 ${thumbs}
-<label class="photo-btn">📷 Photo<input type="file" accept="image/*" capture="environment" style="display:none" onchange="addPhoto('${s.id}',${item.n},this)"></label>
+<label class="photo-btn">📷 Photo<input type="file" accept="image/*" capture="environment" style="display:none" onchange="addPhoto(${area.id},'${crit.key}',this)"></label>
 </div>
+<div class="comments-box"><label>Comment</label>
+<textarea placeholder="Observations / corrective action..." oninput="state.comments[${area.id}]['${crit.key}']=this.value">${state.comments[area.id][crit.key]}</textarea></div>
 </div>`;
-  }).join("");
-  const isLast=sec===SECTIONS.length;
-  return`<div class="topbar"><div><div class="topbar-title">${s.title}</div><div class="topbar-sub">${s.sub||"Section "+s.id}</div></div><div class="topbar-right">${sec}/${SECTIONS.length}</div></div>
+}
+
+function renderArea(screenNum){
+const area=AREAS[screenNum-1];
+const cards=CRITERIA.map(c=>renderCriterionCard(area,c)).join("");
+const isLast=screenNum===AREAS.length;
+return`<div class="topbar"><div><div class="topbar-title">${area.name}</div><div class="topbar-sub">${area.lvl}</div></div><div class="topbar-right">${screenNum}/${AREAS.length}</div></div>
 <div class="prog-wrap"><div class="prog-bar" style="width:${pct()}%"></div></div>
 <div class="screen">
-<span class="sec-badge">Section ${s.id}</span>
-${items}
-<div class="comments-box"><label>Comments / Corrective Actions — Section ${s.id}</label>
-<textarea placeholder="Record observations, Not OK items and required corrective actions..." oninput="state.comments['${s.id}']=this.value">${state.comments[s.id]}</textarea></div>
+<span class="sec-badge">Area ${area.id} of ${AREAS.length}</span>
+${cards}
 </div>
 <div class="nav-row">
 <button class="nav-btn" onclick="go(${state.screen-1})">← Back</button>
-<button class="nav-btn" onclick="go(${SECTIONS.length+1})" style="background:#f0f7f0;color:#1A4731;border-color:#2E7D52">View Report</button>
+<button class="nav-btn" onclick="go(${AREAS.length+1})" style="background:#f0f7f0;color:#1A4731;border-color:#2E7D52">View Report</button>
 <button class="nav-btn primary" onclick="go(${state.screen+1})">${isLast?"Report →":"Next →"}</button>
 </div>`;
 }
 
 function renderReport(){
-  const{total,filled,notOk,ok,missing}=countAll();
-  const dateStr=state.meta.date?new Date(state.meta.date+"T12:00:00").toLocaleDateString("en-CA",{year:"numeric",month:"long",day:"numeric"}):"—";
-  const emailBody=`WEEKLY REPORT - SHAW RESOURCES\nSHAW-DUST-W001 v3.0 | NFPA 664\n\nInspector: ${state.meta.inspector||"—"}\nDate: ${dateStr}\nWeek: ${state.meta.week||"—"}\n\n✓ OK: ${ok}\n✗ Not OK: ${notOk}\nUnanswered: ${missing}\nTotal items: ${total}`;
-  const emailHref=`mailto:?subject=Weekly Report SHAW-DUST-W001 - ${dateStr}&body=${encodeURIComponent(emailBody)}`;
+const{total,filled,notOk,ok,missing,overallPct}=countAll();
+const dateStr=state.meta.date?new Date(state.meta.date+"T12:00:00").toLocaleDateString("en-CA",{year:"numeric",month:"long",day:"numeric"}):"—";
 
-  const sections=SECTIONS.map(s=>{
-    const items=s.items.map(item=>{
-      const r=(state.responses[s.id]||{})[item.n]||{};
-      const photos=(state.photos[s.id]||{})[item.n]||[];
-      const ac=r.accum?`a-${r.accum.toLowerCase()}`:"a-n";
-      const st=r.status==="OK"?"s-ok":r.status==="Not OK"?"s-notok":"s-none";
-      const thumbs=photos.length?`<div class="report-photos">${photos.map(p=>`<img class="report-photo" src="${p}">`).join("")}</div>`:"";
-      return`<div class="report-item"><div class="report-item-row"><span class="ri-num">${s.id}${item.n}</span><span class="ri-text">${item.t}</span><span class="ri-accum ${ac}">${r.accum||"—"}</span><span class="ri-status ${st}">${r.status||"—"}</span></div>${thumbs}</div>`;
-    }).join("");
-    const comm=state.comments[s.id]?`<div class="report-comment">💬 ${state.comments[s.id]}</div>`:"";
-    return`<div class="report-sec"><div class="report-sec-title">Section ${s.id} — ${s.title}</div>${items}${comm}</div>`;
-  }).join("");
+const critBoxes=CRITERIA.map(c=>{
+const p=criterionPct(c.key);
+return`<div class="crit-box"><div class="pct ${p===null?'c-warn':(p>=80?'c-ok':(p>=50?'c-warn':'c-notok'))}">${p===null?"—":p+"%"}</div><div class="lbl">${c.label}</div></div>`;
+}).join("");
 
-  return`<div class="topbar"><div><div class="topbar-title">Weekly Report</div><div class="topbar-sub">SHAW-DUST-W001 · ${dateStr}</div></div></div>
+const levels=["Ground Floor - Outside","Ground Floor - Inside","Second Floor","Third Floor","Exterior"];
+const sections=levels.map(lvl=>{
+const areasInLvl=AREAS.filter(a=>a.lvl===lvl);
+if(!areasInLvl.length)return"";
+const blocks=areasInLvl.map(area=>{
+const p=areaPct(area.id);
+const rows=CRITERIA.map(c=>{
+const r=state.responses[area.id][c.key];
+const photos=state.photos[area.id][c.key];
+const st=statusOf(r.level);
+const comm=state.comments[area.id][c.key];
+const thumbs=photos.length?`<div class="report-photos">${photos.map(ph=>`<img class="report-photo" src="${ph}">`).join("")}</div>`:"";
+const commHtml=comm?`<div class="report-comment">💬 ${comm}</div>`:"";
+const wordLabel=r.level!==null&&r.level!==undefined?c.levels[r.level]:"—";
+return`<div class="report-item"><div class="report-item-row"><span class="ri-text">${c.label}</span><span class="ri-level ${levelClass(r.level)}">${wordLabel}</span><span class="ri-status ${st==="OK"?"s-ok":st==="Not OK"?"s-notok":"s-none"}">${st||"—"}</span></div>${thumbs}${commHtml}</div>`;
+}).join("");
+return`<div class="area-block"><div class="area-head"><span class="area-name">${area.name}</span><span class="area-pct ${pctClass(p)}">${p===null?"—":p+"%"}</span></div>${rows}</div>`;
+}).join("");
+return`<div class="report-sec"><div class="report-sec-title">${lvl}</div>${blocks}</div>`;
+}).join("");
+
+const emailBody=`WEEKLY REPORT - SHAW RESOURCES\nSHAW-DUST-W001 v4.0\n\nInspector: ${state.meta.inspector||"—"}\nDate: ${dateStr}\nWeek: ${state.meta.week||"—"}\n\nOverall Compliance: ${overallPct===null?"—":overallPct+"%"}\n✓ OK: ${ok}\n✗ Not OK: ${notOk}\nUnanswered: ${missing}\nTotal items: ${total}\n\nBy Criterion:\n${CRITERIA.map(c=>`- ${c.label}: ${criterionPct(c.key)===null?"—":criterionPct(c.key)+"%"}`).join("\n")}`;
+const emailHref=`mailto:?subject=Weekly Report SHAW-DUST-W001 - ${dateStr}&body=${encodeURIComponent(emailBody)}`;
+
+return`<div class="topbar"><div><div class="topbar-title">Weekly Report</div><div class="topbar-sub">SHAW-DUST-W001 · ${dateStr}</div></div></div>
 <div class="prog-wrap"><div class="prog-bar" style="width:100%"></div></div>
 <div class="report-pad">
-<div class="report-header"><h2>Weekly Combustible Dust & Fire Prevention Inspection</h2><p>Shaw Resources · S.H.A.W. Program · SHAW-DUST-W001 v3.0 · NFPA 664</p>
+<div class="report-header"><h2>Weekly Combustible Dust & Housekeeping Inspection</h2><p>Shaw Resources · S.H.A.W. Program · SHAW-DUST-W001 v4.0</p>
 <div class="report-meta">Inspector: ${state.meta.inspector||"—"}<br>Date: ${dateStr} &nbsp;·&nbsp; Week: ${state.meta.week||"—"}</div></div>
+
+<div class="big-pct"><div class="num">${overallPct===null?"—":overallPct+"%"}</div><div class="lbl">OVERALL COMPLIANCE</div></div>
+
+<div class="crit-summary">${critBoxes}</div>
+
 <div class="stats">
 <div class="stat"><div class="stat-num c-ok">${ok}</div><div class="stat-lbl">✓ OK</div></div>
 <div class="stat"><div class="stat-num c-notok">${notOk}</div><div class="stat-lbl">✗ Not OK</div></div>
 <div class="stat"><div class="stat-num c-warn">${missing}</div><div class="stat-lbl">Unanswered</div></div>
 <div class="stat"><div class="stat-num">${total}</div><div class="stat-lbl">Total items</div></div>
 </div>
+
 ${sections}
+
 <div class="actions">
+<button class="act-btn green" id="submitBtn" onclick="submitToSheets()">☁️ Send to Google Sheet</button>
+<div id="submitStatus" style="font-size:12px;color:#888;text-align:center;margin-top:-4px"></div>
 <button class="act-btn green" onclick="window.print()">🖨️ Print / Save as PDF</button>
 <a class="act-btn" href="${emailHref}">✉️ Send by email</a>
 <button class="act-btn" onclick="go(state.screen-1)">← Back to edit</button>
@@ -303,21 +391,72 @@ ${sections}
 </div></div>`;
 }
 
+function weekStartISO(dateStr){
+const d=dateStr?new Date(dateStr+"T12:00:00"):new Date();
+const day=d.getDay();
+const sun=new Date(d);sun.setDate(d.getDate()-day);
+return sun.toISOString().slice(0,10);
+}
+
+function submitToSheets(){
+const btn=document.getElementById("submitBtn");
+const status=document.getElementById("submitStatus");
+btn.disabled=true;btn.textContent="☁️ Sending...";
+status.textContent="";
+
+const payload={
+inspector:state.meta.inspector,
+week:state.meta.week,
+weekStart:weekStartISO(state.meta.date),
+areas:AREAS.map(a=>({
+areaId:a.id,
+level:a.lvl,
+area:a.name,
+leaks:critByKey("leaks").levels[state.responses[a.id].leaks.level]||"",
+leaksComment:state.comments[a.id].leaks||"",
+leaksPhoto:state.photos[a.id].leaks.length?"Yes":"",
+dust:critByKey("dust").levels[state.responses[a.id].dust.level]||"",
+dustComment:state.comments[a.id].dust||"",
+dustPhoto:state.photos[a.id].dust.length?"Yes":"",
+housekeeping:critByKey("housekeeping").levels[state.responses[a.id].housekeeping.level]||"",
+hkComment:state.comments[a.id].housekeeping||"",
+hkPhoto:state.photos[a.id].housekeeping.length?"Yes":"",
+}))
+};
+
+fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",body:JSON.stringify(payload)})
+.then(()=>{
+btn.textContent="✅ Sent to Google Sheet";
+status.textContent="Check the Subsumission tab to confirm the new rows.";
+setTimeout(()=>{btn.disabled=false;btn.textContent="☁️ Send to Google Sheet";},4000);
+})
+.catch(err=>{
+btn.disabled=false;btn.textContent="☁️ Send to Google Sheet";
+status.textContent="⚠️ Could not send — check your connection and try again.";
+});
+}
+
 function newInspection(){
-  state.screen=0;state.meta={inspector:"",date:"",week:""};
-  SECTIONS.forEach(s=>{state.responses[s.id]={};state.comments[s.id]="";state.photos[s.id]={};});
-  render();
+state.screen=0;state.meta={inspector:"",date:"",week:""};
+AREAS.forEach(a=>{
+state.responses[a.id]={};state.comments[a.id]={};state.photos[a.id]={};
+CRITERIA.forEach(c=>{
+state.responses[a.id][c.key]={level:null};
+state.comments[a.id][c.key]="";
+state.photos[a.id][c.key]=[];
+});
+});
+render();
 }
 
 function go(n){state.screen=n;render();window.scrollTo(0,0);}
 
 function render(){
-  const app=document.getElementById("app");
-  if(state.screen===0)app.innerHTML=renderMeta();
-  else if(state.screen>=1&&state.screen<=SECTIONS.length)app.innerHTML=renderSection(state.screen);
-  else app.innerHTML=renderReport();
+const app=document.getElementById("app");
+if(state.screen===0)app.innerHTML=renderMeta();
+else if(state.screen>=1&&state.screen<=AREAS.length)app.innerHTML=renderArea(state.screen);
+else app.innerHTML=renderReport();
 }
-
 render();
 </script>
 </body>
